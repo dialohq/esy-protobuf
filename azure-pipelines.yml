@@ -20,6 +20,7 @@ jobs:
     parameters:
       platform: macOS
       vmImage: macOS-10.14
+      dependency: Linux
 
   # Need windows-2019 to do esy import/export-dependencies
   # which assumes you have bsdtar (tar.exe) in your system
@@ -29,6 +30,7 @@ jobs:
     parameters:
       platform: Windows
       vmImage: windows-2019
+      dependency: macOS
 
   # This job is kept here as we want to have the platform names in the same file
   - job: Release

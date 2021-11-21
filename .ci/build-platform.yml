@@ -1,9 +1,11 @@
 parameters:
   platform: "macOS"
   vmImage: "macOS-10.13"
+  dependency: []
 
 jobs:
   - job: ${{ parameters.platform }}
+    dependsOn: ${{ parameters.dependency }}
     pool:
       vmImage: ${{ parameters.vmImage }}
       demands: node.js
